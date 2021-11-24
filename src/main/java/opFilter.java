@@ -115,10 +115,25 @@ public class opFilter {
      */
     public static void main (String[]args){
 //random list
+        ArrayList<Operator> opList = new ArrayList<Operator>();
+        ArrayList<String> test = new ArrayList<String>(Arrays.asList("test", "A", "B"));
         Operator Siege=new Operator("Siege", 6, new ArrayList(Arrays.asList("DP recovery")), new ArrayList<String>(Arrays.asList("Melee", "Vangsuard")));
         Operator Amiya=new Operator("Amiya", 5, new ArrayList(Arrays.asList("True Damage", "Art Damage")), new ArrayList<String>(Arrays.asList("Range", "Caster")));
+        Operator Skadi=new Operator("Skadi", 6, new ArrayList(Arrays.asList("On Deploy")), new ArrayList<String>(Arrays.asList("Melee", "Guard")));
+        Operator Coebe=new Operator("Coebe", 6, new ArrayList(Arrays.asList("Art Damage", "Silent")), new ArrayList<String>(Arrays.asList("Range", "Caster")));
 
-
+        //lambda test
+        opList.add(Siege);
+        opList.add(Amiya);
+        opList.add(Skadi);
+        opList.add(Coebe);
+        opList.forEach((x)->{x.addAbTag(test);});
+        opList.forEach((x)->{System.out.println(x.getOperatorName());});
+        opList.sort((x, y)->x.getOperatorName().compareTo(y.getOperatorName()));
+        //stream test
+        opList.stream().map(Operator::getOperatorName).forEach(System.out::println);
+        System.out.println("rarity sum "+opList.stream().map(str -> str.getOperatorRarity()).reduce(0, (x,y)->x+y));
+        opList.stream().map(x->x.getAbTag()).forEach(x->System.out.println(x));
         Amiya.getAbTag().stream().map(str -> str.length()).forEach(System.out::println);
         System.out.println("End line");
         Amiya.getRcTag().stream().map(str2 -> str2.length()).forEach(System.out::println);

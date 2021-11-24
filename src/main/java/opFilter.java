@@ -1,5 +1,7 @@
 
 
+import Operator.Operator;
+
 import java.util.*;
 
 public class opFilter {
@@ -93,8 +95,7 @@ public class opFilter {
         return true;
     }
 
-    public static void main (String[]args){
-        HashSet currentFilter = new HashSet();
+    /* HashSet currentFilter = new HashSet();
         Set currentFilterA = new HashSet();
         currentFilter.add("A");
         currentFilter.add("B");
@@ -102,7 +103,26 @@ public class opFilter {
         currentFilterA.add("B");
         ArrayList sec_list = new ArrayList();
         System.out.println("??");
+        Set<Integer> no= new HashSet<Integer>();
+        Object one=no;
+        one.size();
 
+
+
+
+
+
+     */
+    public static void main (String[]args){
+//random list
+        Operator Siege=new Operator("Siege", 6, new ArrayList(Arrays.asList("DP recovery")), new ArrayList<String>(Arrays.asList("Melee", "Vangsuard")));
+        Operator Amiya=new Operator("Amiya", 5, new ArrayList(Arrays.asList("True Damage", "Art Damage")), new ArrayList<String>(Arrays.asList("Range", "Caster")));
+
+
+        Amiya.getAbTag().stream().map(str -> str.length()).forEach(System.out::println);
+        System.out.println("End line");
+        Amiya.getRcTag().stream().map(str2 -> str2.length()).forEach(System.out::println);
+        System.out.println("Ending");
     }
 }
 

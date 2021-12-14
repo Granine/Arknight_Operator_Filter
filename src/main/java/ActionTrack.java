@@ -158,34 +158,4 @@ public class ActionTrack implements Runnable{
         return true;
     }
 
-    /**
-     * erase all file history/c,vache/timestamp, EVERYTHING
-     * @return true if sucessful
-     */
-    public static boolean killHistory(){
-        try {
-            File Itm = new File("local/CacheItm");
-            PrintWriter SItm = new PrintWriter(Itm);
-            SItm.close();
-
-            File Occ = new File("local/CacheOcc");
-            PrintWriter SOcc = new PrintWriter(Occ);
-            SOcc.close();
-
-            File Tim = new File("local/CacheTim");
-            PrintWriter STim = new PrintWriter(Tim);
-            STim.close();
-
-            //File Request = new File("local/CacheRequest");
-            //PrintWriter SRequest = new PrintWriter(Request);
-            //SRequest.close();
-
-        } catch (IOException Exception){
-            System.out.println("Mandatory File CacheItm/Occ/Request/Tim removed!");
-            return false;
-        }
-        return true;
-    }
-
-
 }

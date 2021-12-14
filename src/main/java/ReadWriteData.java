@@ -1,3 +1,5 @@
+package src.main.java;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,6 +15,14 @@ public class ReadWriteData implements Runnable{
     @Override
     public void run() {
 
+    }
+    public ReadWriteData (Operator operator){
+
+    }
+
+    public static boolean writeLot(){
+
+        return true;
     }
     /**
      * store String to cache, each request stores to a new line

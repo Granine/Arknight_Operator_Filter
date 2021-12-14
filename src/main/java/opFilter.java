@@ -1,7 +1,9 @@
-
+package src.main.java;
 
 import Operator.Operator;
+
 import java.util.*;
+
 
 public class opFilter {
     //filter by tag

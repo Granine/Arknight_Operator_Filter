@@ -1,4 +1,4 @@
-package src.main.java.Operator;
+package Operator;
 
 public class Guard extends Operator{
 }

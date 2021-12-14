@@ -1,4 +1,4 @@
-package src.main.java;Operator;
+package Operator;
 
 import java.util.*;
 

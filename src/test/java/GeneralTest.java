@@ -1,6 +1,3 @@
-package java;
-
-import src.main.java.ReadWriteData;
 
 public class GeneralTest implements Runnable{
 

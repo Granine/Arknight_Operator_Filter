@@ -1,7 +1,6 @@
 
 
 import Operator.Operator;
-
 import java.util.*;
 
 public class opFilter {

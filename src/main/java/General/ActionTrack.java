@@ -1,30 +1,51 @@
+package General;
 
 import java.util.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDateTime;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
-import java.util.Collections;
 
 /**
  * record action and read action history using thread
  */
-public class ActionTrack implements Runnable{
+public class ActionTrack{
     private ArrayList<String> searchItm = new ArrayList<>();
     private ArrayList<Integer> searchOcc = new ArrayList<>();
     private ArrayList< ArrayList<Double>> searchTim= new ArrayList<>();
     private ArrayList<Double> request = new ArrayList<>();
     public boolean debug;
 
-    @Override
-    public void run() {
+    private String actionName;
+    private int[] actionStartTime = new int[7];
 
+    public ActionTrack (String action){
+        actionName=action;
+        this.actionStart();
+    }
+    private void actionStart(){
+        actionStartTime[0]= LocalDateTime.now().getYear();
+        actionStartTime[1]= LocalDateTime.now().getMonthValue();
+        actionStartTime[2]= LocalDateTime.now().getDayOfMonth();
+        actionStartTime[3]= LocalDateTime.now().getHour();
+        actionStartTime[4]= LocalDateTime.now().getMinute();
+        actionStartTime[5]= LocalDateTime.now().getSecond();
+        actionStartTime[6]= LocalDateTime.now().getNano();
     }
 
+    /**
+     *
+     * @return the time take the action to finish in seconds
+     */
+    public double actionEnd(){
+        //time now
+        double timeNow=actionStartTime[3]*3600+actionStartTime[4]*60+actionStartTime[5]+actionStartTime[6]/1000000000.0;
+        double timePass=LocalDateTime.now().getHour()*3600+LocalDateTime.now().getMinute()*60+LocalDateTime.now().getSecond()+LocalDateTime.now().getNano()/1000000000.0-timeNow;
+        StaticHelper.cacheSafe(Arrays.stream(actionStartTime).mapToObj((int x)->String.valueOf(x)).reduce(actionName,(x, y)->x+"+"+y)+"+"+timePass, "Data/OperatorData/ActionHistory");
+        return timePass;
+    }
     /**
      *record the search result, count as well as search time
      * @param searchR the string to record

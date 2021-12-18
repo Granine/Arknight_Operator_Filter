@@ -1,4 +1,4 @@
-
+package Filter;
 
 import Operator.Operator;
 
@@ -118,10 +118,10 @@ public class opFilter {
 //random list
         ArrayList<Operator> opList = new ArrayList<Operator>();
         ArrayList<String> test = new ArrayList<String>(Arrays.asList("test", "A", "B"));
-        Operator Siege=new Operator("Siege", 6, new ArrayList(Arrays.asList("DP recovery")), new ArrayList<String>(Arrays.asList("Melee", "Vangsuard")));
-        Operator Amiya=new Operator("Amiya", 5, new ArrayList(Arrays.asList("True Damage", "Art Damage")), new ArrayList<String>(Arrays.asList("Range", "Caster")));
-        Operator Skadi=new Operator("Skadi", 6, new ArrayList(Arrays.asList("On Deploy")), new ArrayList<String>(Arrays.asList("Melee", "Guard")));
-        Operator Coebe=new Operator("Coebe", 6, new ArrayList(Arrays.asList("Art Damage", "Silent")), new ArrayList<String>(Arrays.asList("Range", "Caster")));
+        Operator Siege=new Operator("Siege", 6, null,new ArrayList(Arrays.asList("DP recovery")), new ArrayList<String>(Arrays.asList("Melee", "Vangsuard")));
+        Operator Amiya=new Operator("Amiya", 5, null, new ArrayList(Arrays.asList("True Damage", "Art Damage")), new ArrayList<String>(Arrays.asList("Range", "Caster")));
+        Operator Skadi=new Operator("Skadi", 6, null, new ArrayList(Arrays.asList("On Deploy")), new ArrayList<String>(Arrays.asList("Melee", "Guard")));
+        Operator Coebe=new Operator("Coebe", 6, null, new ArrayList(Arrays.asList("Art Damage", "Silent")), new ArrayList<String>(Arrays.asList("Range", "Caster")));
 
         //lambda test
         opList.add(Siege);

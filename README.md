@@ -5,8 +5,9 @@ A operator filtering tool based on operator ability/stats/tags for the mobile ga
 - This is a practice project for learning C so it included a wide range different algorism/methods to accomplish the same things (eg. parallel approach for file read write while in reality there are only ~250 items to store parallization is completly unnessasory)
 - I decided to make this tool becasue I cannot find a great operator filter tool unline that supports filter by stats or operator ability such as RES debuff or ATK buff etc
 - The project is unfinished at the moment with only storing feature and no lookup, I will keep working on it when I have the time
-## Use
+## How to use
 Any java compiler with java version 12 or up, interated through terminal
+
 ---
 ## Planned function
 1) Operator look up
